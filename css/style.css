@@ -1,0 +1,376 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+header{
+    background-color: #4CB4FF;
+    height: 80px;
+    color: white;
+}
+
+#titre{
+    padding-top: 1%;
+    font-style: italic;
+}
+
+.section{
+    min-height: 534px;
+    background-color: black;
+}
+
+footer{
+    background-color: #4CB4FF;
+    height: 70px;
+    color: white;
+}
+
+#footer{
+    padding-top: 1%;
+    font-style: italic;
+}
+
+.circle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 180px;
+    width: 180px;
+    height: 180px;
+    background: transparent;
+    border: 3px solid #3c3c3c;
+    border-radius: 50%;
+    text-shadow: 0 0 10px #6bd3e6;
+    box-shadow: 0 0 20px #37cde7;
+}
+
+.circle::before{
+    content: "";
+    position: absolute;
+    top:-2px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent;
+    border-top: 3px solid rgb(38,218,288);
+    border-right:3px solid rgb(38,218,288);
+    border-radius: 50%;
+    animation: circleAnimate 2s linear infinite;
+}
+
+
+@keyframes circleAnimate{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+.circle1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 180px;
+    width: 250px;
+    height: 250px;
+    background: transparent;
+    border: 3px solid #3c3c3c;
+    border-radius: 50%;
+    text-shadow: 0 0 10px #fff000;
+    box-shadow: 0 0 20px #fff000;
+}
+
+.circle1::before{
+    content: "";
+    position: absolute;
+    top:-2px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent;
+    border-bottom: 3px solid #fff000;
+    border-left:3px solid #fff000 ;
+    border-radius: 50%;
+    animation: circleAnimate1 2s linear infinite;
+}
+
+
+@keyframes circleAnimate1{
+    0%{
+        transform: rotate(360deg);
+    }
+
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+/* .circle span{
+    display: block;
+    position: absolute;
+    top:calc(50% - 2px);
+    left: 50%;
+    width: 50%;
+    height: 4px;
+    background: transparent;
+    transform-origin: left;
+    animation: pointAnimation 2s linear infinite;
+}
+
+.circle span::before{
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: rgb(38,218,288);
+    top:-7px;
+    right: -8px;
+    border-radius: 50%;
+    box-shadow: 0 0 20 rgb(38,218,288);
+}
+
+
+@keyframes pointAnimation{
+    0%{
+        transform: rotate(45deg);
+    }
+
+    100%{
+        transform: rotate(405deg);
+    }
+}
+
+
+.circle1 span{
+    display: block;
+    position: absolute;
+    top:calc(50% - 2px);
+    left: 50%;
+    width: 50%;
+    height: 4px;
+    background: transparent;
+    transform-origin: left;
+    animation: pointAnimation1 2s linear infinite;
+}
+
+.circle1 span::before{
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #fff000;
+    top:-7px;
+    right: -8px;
+    border-radius: 50%;
+    box-shadow: 0 0 20 #fff000;
+}
+
+
+@keyframes pointAnimation1{
+    0%{
+        transform: rotate(405deg);
+    }
+
+    100%{
+        transform: rotate(45deg);
+    }
+} */
+
+.buttonajouter{
+    position: absolute;
+    left: 34%;
+    top: 35%;
+  
+}
+
+.buttonajouter button{
+    width: 120px;
+}
+
+.nomsujet{
+    position: absolute;
+    top: 27%;
+    width: 350px;
+}
+
+.area{
+    position: absolute;
+    left: 44%;
+    top: 15%;
+}
+
+.total{
+    margin-left: 7%;
+    padding-top:3% ;
+    color: white;
+}
+
+
+.buttonrandem{
+width: 300px;
+}
+
+.divrandem{
+    position: absolute;
+    left: 20%;
+    top: 70%;
+}
+
+.datesujet{
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 67%;
+    width: 400px;
+}
+
+
+/* style randem */
+
+.container{
+    width: 500px ;
+    height: 500px;
+    background-color: #212529;
+    border-radius: 50%;
+    border: 15px solid #212529;
+    position: relative;
+    overflow: hidden;
+    animation: rotate 8s ease-in-out  alternate;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(1200deg);
+    }
+    50%{
+        transform: rotate(1000deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.container div {
+    height: 50%;
+    width: 200px;
+    position: absolute;
+    clip-path: polygon(100% 0,50% 100%, 0 0);
+    transform:translateX(-50px);
+    transform-origin: bottom ;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #fff;
+    left: 135px;
+
+ }
+ .container .un{
+     background-color: #3f3f3f;
+     transform: rotate(0deg);
+
+ }
+ .container .deux{
+     background-color: #be3939;
+     transform: rotate(45deg);
+ }
+ .container .troi{
+     background-color: #aba8b3;
+     transform: rotate(90deg);
+ }
+ .container .quatre{
+     background-color: #5639be;
+     transform: rotate(135deg);
+ }
+ .container .cinq{
+     background-color: #1ce0e0;
+     transform: rotate(180deg);
+ }
+ .container .six{
+    background-color: #e94bd4;
+    transform: rotate(225deg);
+}
+.container .sept{
+    background-color: #da2727;
+    transform: rotate(270deg);
+}
+.container .huit{
+    background-color: #d3c11d;
+    transform: rotate(315deg);
+}
+
+
+ 
+ .arrow{
+     position:absolute;
+     top:0;
+     left:50%;
+     transform: translateX(-50%);
+     color: #fff;
+ }
+ .arrow ::before{
+     content: '\1F817';
+     font-size:50px;
+ }
+ #spin{
+
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: #e2e2e2; 
+    text-transform: uppercase;
+    border:8px solid #fff;
+    font-weight:bold;
+    font-size:20px;
+    color: #fff;;
+    width:80px;
+    height:80px;
+    font-family: sans-serif;
+    border-radius:50%;
+    cursor:pointer;
+    outline:none;
+    letter-spacing:1px;
+ }
+  
+/* 
+ .spinrandom{
+     position: relative;
+     top:5% !important;
+ }
+
+.tablefinal{
+    position: relative;
+    top: 10%;
+} */
+ .btndawlond{
+    width: 300px;
+    
+ }
+
+
+ .btnreteur{
+width: 300px;
+
+
+}
