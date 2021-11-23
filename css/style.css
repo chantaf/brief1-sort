@@ -4,6 +4,7 @@
 }
 
 
+/* header titre footer section */
 
 header{
     background-color: #4CB4FF;
@@ -31,6 +32,8 @@ footer{
     padding-top: 1%;
     font-style: italic;
 }
+
+/* circle  laoding*/
 
 .circle{
     position: absolute;
@@ -123,76 +126,7 @@ footer{
     }
 }
 
-/* .circle span{
-    display: block;
-    position: absolute;
-    top:calc(50% - 2px);
-    left: 50%;
-    width: 50%;
-    height: 4px;
-    background: transparent;
-    transform-origin: left;
-    animation: pointAnimation 2s linear infinite;
-}
 
-.circle span::before{
-    content: "";
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background: rgb(38,218,288);
-    top:-7px;
-    right: -8px;
-    border-radius: 50%;
-    box-shadow: 0 0 20 rgb(38,218,288);
-}
-
-
-@keyframes pointAnimation{
-    0%{
-        transform: rotate(45deg);
-    }
-
-    100%{
-        transform: rotate(405deg);
-    }
-}
-
-
-.circle1 span{
-    display: block;
-    position: absolute;
-    top:calc(50% - 2px);
-    left: 50%;
-    width: 50%;
-    height: 4px;
-    background: transparent;
-    transform-origin: left;
-    animation: pointAnimation1 2s linear infinite;
-}
-
-.circle1 span::before{
-    content: "";
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background: #fff000;
-    top:-7px;
-    right: -8px;
-    border-radius: 50%;
-    box-shadow: 0 0 20 #fff000;
-}
-
-
-@keyframes pointAnimation1{
-    0%{
-        transform: rotate(405deg);
-    }
-
-    100%{
-        transform: rotate(45deg);
-    }
-} */
 
 .buttonajouter{
     position: absolute;
@@ -244,7 +178,6 @@ width: 300px;
 
 
 /* style randem */
-
 .container{
     width: 500px ;
     height: 500px;
@@ -331,8 +264,8 @@ width: 300px;
      content: '\1F817';
      font-size:50px;
  }
+ 
  #spin{
-
     position:absolute;
     top:50%;
     left:50%;
@@ -353,24 +286,22 @@ width: 300px;
     letter-spacing:1px;
  }
   
-/* 
- .spinrandom{
+ 
+ /* .spinrandom{
      position: relative;
-     top:5% !important;
- }
+     top:10%;
+ } */
 
 .tablefinal{
-    position: relative;
-    top: 10%;
-} */
- .btndawlond{
+    position: absolute;
+    top: 15%;
+} 
+
+ .btndanwload{
     width: 300px;
-    
  }
 
 
  .btnreteur{
 width: 300px;
-
-
 }

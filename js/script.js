@@ -1,3 +1,6 @@
+
+// 1er page (entrer les infos)
+
 function animation(){
     setTimeout(function(){
         document.getElementById('section1').innerHTML="";
@@ -58,6 +61,7 @@ function animation(){
 
 }
 
+// reteur 1er animation
 
 function reteur(){
        
@@ -77,14 +81,15 @@ function reteur(){
 }
 
 
+// animation circle randem et remplisage table resultat
 
 function animationrandem(){
     var date=document.getElementById('datedebut').value;
-    if(date==""){
-        alert("choisir votre date debut de 1er sujet");
+    if(array==""){
+        alert("ajouter des personnes avec des sujets");
     }else{
-        if(array==""){
-            alert("ajouter des personnes avec des sujets");
+        if(date==""){
+            alert("choisir votre date debut de 1er sujet");
         }else{
     randem();
         document.getElementById('section1').innerHTML="";
@@ -124,7 +129,7 @@ function animationrandem(){
             <td colspan="2">
                 <center>
                     <div >
-                    <button type="button" class="g-recaptcha btn btn-info  btndawlond" id="submit" onclick="" >DAWLOND</button>
+                    <button type="button" class="g-recaptcha btn btn-info  btndanwload" id="submit" onclick="Export('xlsx')" >DAWNLOAD</button>
                     </div>
                 </center>
             </td>
@@ -163,10 +168,12 @@ function animationrandem(){
 
 
 
+// declaration les table (declaration global)
 var array=[];
-
 var arrayfinal=[];
 
+
+// pour ajouter des personnes avec des sujets
 function ajouter(){
         var Nom=document.getElementById('nom');
         var Sujet=document.getElementById('sujet');
@@ -186,7 +193,7 @@ function ajouter(){
 
 
 
-var indice=0;
+// pour randem 1er table
 function entierAleatoire(d)
 {
    
@@ -202,7 +209,7 @@ function entierAleatoire(d)
     arrayfinal.push({
         nom:array[a].nom,
         sujet:array[a].sujet,
-        date:new Date(d)
+        date:new Date(d).toLocaleDateString()
 
     });
 
@@ -222,28 +229,40 @@ return 1;
 
 }
 
+
+
+// fonctionner  function randem 
+
 function randem(){
   var datedebut= document.getElementById('datedebut').value;
-  var  date=new Date(datedebut);
+  var date=new Date(datedebut);
 
     while(array.length!=0){
-      
+      if(date.getDay()==6){
+        date.setDate(date.getDate()+2);
+      } 
+     
        var res= entierAleatoire(date);
-
+    
        if(res==0){
-        date=new Date(date.setDate(date.getDate()+1));
-       }else{
-        date=new Date(date.setDate(date.getDate()-1));
+           
+        date.setDate(date.getDate()+1);
        }
-
-         
-
     }
 
-   
-    console.log(arrayfinal);
-   
 }
+  
+
+// convert table html en fichier excel
+
+function Export(type, fn, dl) {
+    var elt = document.getElementById('tablefinal');
+    var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+    return dl ?
+        XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
+        XLSX.writeFile(wb, fn  ('resultat-exel' + (type || 'xlsx')));
+}
+
 
 
  
