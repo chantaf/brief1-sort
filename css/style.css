@@ -294,14 +294,21 @@ width: 300px;
 
 .tablefinal{
     position: absolute;
-    top: 15%;
+    top: 25%;
 } 
 
  .btndanwload{
     width: 300px;
+    position: absolute;
+    left: 20%;
+    top: 15%;
+
  }
 
 
  .btnreteur{
 width: 300px;
+position: absolute;
+top: 15%;
+left: 60%;
 }

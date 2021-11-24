@@ -94,24 +94,24 @@ function animationrandem(){
     randem();
         document.getElementById('section1').innerHTML="";
         document.getElementById('section1').innerHTML=`<div class="spinrandom">
-        <button id="spin">Spin</button>
+        <button id="spin">Start</button>
         <span class="arrow"> </span>
         <div class="container">
-          <div class="un">1</div>
-          <div class="deux">2</div>
-          <div class="troi">3</div>
-          <div class="quatre">4</div>
-          <div class="cinq">5</div>
-          <div class="six">6</div>
-          <div class="sept">7</div>
-          <div class="huit">8</div>
+          <div class="un"></div>
+          <div class="deux"></div>
+          <div class="troi"></div>
+          <div class="quatre"></div>
+          <div class="cinq"></div>
+          <div class="six"></div>
+          <div class="sept"></div>
+          <div class="huit"></div>
          
         </div>
       </div>`
 
       setTimeout(function(){
         document.getElementById('section1').innerHTML="";
-        document.getElementById('section1').innerHTML=`<table class="table table-striped table-dark tablefinal" >
+        document.getElementById('section1').innerHTML=`<table class="table table-striped table-dark tablefinal" id="tablefinal" >
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -127,24 +127,29 @@ function animationrandem(){
         <tfooter>
         <tr> 
             <td colspan="2">
-                <center>
-                    <div >
-                    <button type="button" class="g-recaptcha btn btn-info  btndanwload" id="submit" onclick="Export('xlsx')" >DAWNLOAD</button>
-                    </div>
-                </center>
+             
             </td>
 
             <td colspan="2">
-                <center>
-                    <div >
-                            <button type="button" class="g-recaptcha btn btn-danger  btnreteur" id="submit" onclick="reteur()" >RETEUR</button>
-                    </div>
-                </center>
+               
             </td>
      </tr>
      
      </tfooter>
       </table>
+
+      <center>
+      <div >
+              <button type="button" class="g-recaptcha btn btn-danger  btnreteur" id="submit" onclick="reteur()" >RETEUR</button>
+      </div>
+     </center>
+
+
+    
+     <div >
+     <button type="button" class="g-recaptcha btn btn-info  btndanwload" id="submit" onclick="convert('xlsx','fichier1')" >DAWNLOAD</button>
+     </div>
+
 
       `;
       var table=document.getElementById("tableresult");
@@ -255,12 +260,10 @@ function randem(){
 
 // convert table html en fichier excel
 
-function Export(type, fn, dl) {
+function convert(fe,fn){
     var elt = document.getElementById('tablefinal');
     var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
-    return dl ?
-        XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }) :
-        XLSX.writeFile(wb, fn  ('resultat-exel' + (type || 'xlsx')));
+    return XLSX.writeFile(wb,fn+"."+fe ||("filename."+(fe||'xlsx')));
 }
 
 
